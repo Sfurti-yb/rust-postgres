@@ -2,7 +2,7 @@ use std::fmt;
 
 use postgres_types::FromSqlOwned;
 use time_03::{OffsetDateTime, PrimitiveDateTime, format_description};
-use tokio_postgres::{
+use yb_tokio_postgres::{
     Client,
     types::{Date, Timestamp},
 };

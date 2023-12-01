@@ -403,7 +403,7 @@ impl Client {
     /// # Examples
     ///
     /// ```no_run
-    /// # async fn async_main(client: &tokio_postgres::Client) -> Result<(), tokio_postgres::Error> {
+    /// # async fn async_main(client: &yb_tokio_postgres::Client) -> Result<(), yb_tokio_postgres::Error> {
     /// use std::pin::pin;
     /// use futures_util::TryStreamExt;
     ///

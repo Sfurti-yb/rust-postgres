@@ -1,13 +1,13 @@
 [package]
-name = "tokio-postgres"
-version = "0.7.18"
+name = "yb-tokio-postgres"
+version = "0.7.18-yb-1"
 authors = ["Steven Fackler <sfackler@gmail.com>"]
 edition = "2024"
 license = "MIT OR Apache-2.0"
-description = "A native, asynchronous PostgreSQL client"
-repository = "https://github.com/rust-postgres/rust-postgres"
+description = "A native, asynchronous YugabyteDB YSQL client"
+repository = "https://github.com/yugabyte/rust-postgres"
 readme = "../README.md"
-keywords = ["database", "postgres", "postgresql", "sql", "async"]
+keywords = ["database", "postgres", "postgresql", "sql", "async", "yugabyte", "yugabytedb", "ysql"]
 categories = ["database"]
 rust-version = "1.85"
 
@@ -20,6 +20,9 @@ harness = false
 
 [package.metadata.docs.rs]
 all-features = true
+
+[badges]
+circle-ci = { repository = "yugabyte/rust-postgres" }
 
 [features]
 default = ["runtime"]
@@ -63,7 +66,7 @@ pin-project-lite = "0.2.11"
 phf = "0.13"
 postgres-protocol = { version = "0.6.12", path = "../postgres-protocol" }
 postgres-types = { version = "0.2.14", path = "../postgres-types" }
-tokio = { version = "1.27", features = ["io-util"] }
+tokio = { version = "1.27", features = ["io-util", "rt"] }
 tokio-util = { version = "0.7", features = ["codec"] }
 rand = "0.10.0"
 whoami = "2.0.1"

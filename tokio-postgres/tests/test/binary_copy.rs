@@ -1,8 +1,8 @@
 use crate::connect;
 use futures_util::TryStreamExt;
 use std::pin::pin;
-use tokio_postgres::binary_copy::{BinaryCopyInWriter, BinaryCopyOutStream};
-use tokio_postgres::types::Type;
+use yb_tokio_postgres::binary_copy::{BinaryCopyInWriter, BinaryCopyOutStream};
+use yb_tokio_postgres::types::Type;
 
 #[tokio::test]
 async fn write_basic() {

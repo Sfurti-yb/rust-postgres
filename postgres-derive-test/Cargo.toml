@@ -9,4 +9,4 @@ rust-version = "1.85"
 trybuild = "1.0.18"
 
 postgres-types = { path = "../postgres-types", features = ["derive"] }
-postgres = { path = "../postgres" }
+postgres = "0.19.7"

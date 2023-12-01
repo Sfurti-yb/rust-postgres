@@ -1,13 +1,13 @@
 [package]
-name = "postgres"
-version = "0.19.13"
+name = "yb-postgres"
+version = "0.19.13-yb-1"
 authors = ["Steven Fackler <sfackler@gmail.com>"]
 edition = "2024"
 license = "MIT OR Apache-2.0"
-description = "A native, synchronous PostgreSQL client"
-repository = "https://github.com/rust-postgres/rust-postgres"
+description = "A native, synchronous YugabyteDB YSQL client"
+repository = "https://github.com/yugabyte/rust-postgres"
 readme = "../README.md"
-keywords = ["database", "postgres", "postgresql", "sql"]
+keywords = ["database", "postgres", "postgresql", "sql", "yugabyte", "yugabytedb", "ysql"]
 categories = ["database"]
 rust-version = "1.85"
 
@@ -18,27 +18,30 @@ harness = false
 [package.metadata.docs.rs]
 all-features = true
 
+[badges]
+circle-ci = { repository = "yugabyte/rust-postgres" }
+
 [features]
-array-impls = ["tokio-postgres/array-impls"]
-with-bit-vec-0_6 = ["tokio-postgres/with-bit-vec-0_6"]
-with-bit-vec-0_7 = ["tokio-postgres/with-bit-vec-0_7"]
-with-bit-vec-0_8 = ["tokio-postgres/with-bit-vec-0_8"]
-with-bit-vec-0_9 = ["tokio-postgres/with-bit-vec-0_9"]
-with-chrono-0_4 = ["tokio-postgres/with-chrono-0_4"]
-with-cidr-0_2 = ["tokio-postgres/with-cidr-0_2"]
-with-cidr-0_3 = ["tokio-postgres/with-cidr-0_3"]
-with-eui48-0_4 = ["tokio-postgres/with-eui48-0_4"]
-with-eui48-1 = ["tokio-postgres/with-eui48-1"]
-with-geo-types-0_6 = ["tokio-postgres/with-geo-types-0_6"]
-with-geo-types-0_7 = ["tokio-postgres/with-geo-types-0_7"]
-with-jiff-0_1 = ["tokio-postgres/with-jiff-0_1"]
-with-jiff-0_2 = ["tokio-postgres/with-jiff-0_2"]
-with-serde_json-1 = ["tokio-postgres/with-serde_json-1"]
-with-smol_str-01 = ["tokio-postgres/with-smol_str-01"]
-with-uuid-0_8 = ["tokio-postgres/with-uuid-0_8"]
-with-uuid-1 = ["tokio-postgres/with-uuid-1"]
-with-time-0_2 = ["tokio-postgres/with-time-0_2"]
-with-time-0_3 = ["tokio-postgres/with-time-0_3"]
+array-impls = ["yb-tokio-postgres/array-impls"]
+with-bit-vec-0_6 = ["yb-tokio-postgres/with-bit-vec-0_6"]
+with-bit-vec-0_7 = ["yb-tokio-postgres/with-bit-vec-0_7"]
+with-bit-vec-0_8 = ["yb-tokio-postgres/with-bit-vec-0_8"]
+with-bit-vec-0_9 = ["yb-tokio-postgres/with-bit-vec-0_9"]
+with-chrono-0_4 = ["yb-tokio-postgres/with-chrono-0_4"]
+with-cidr-0_2 = ["yb-tokio-postgres/with-cidr-0_2"]
+with-cidr-0_3 = ["yb-tokio-postgres/with-cidr-0_3"]
+with-eui48-0_4 = ["yb-tokio-postgres/with-eui48-0_4"]
+with-eui48-1 = ["yb-tokio-postgres/with-eui48-1"]
+with-geo-types-0_6 = ["yb-tokio-postgres/with-geo-types-0_6"]
+with-geo-types-0_7 = ["yb-tokio-postgres/with-geo-types-0_7"]
+with-jiff-0_1 = ["yb-tokio-postgres/with-jiff-0_1"]
+with-jiff-0_2 = ["yb-tokio-postgres/with-jiff-0_2"]
+with-serde_json-1 = ["yb-tokio-postgres/with-serde_json-1"]
+with-smol_str-01 = ["yb-tokio-postgres/with-smol_str-01"]
+with-uuid-0_8 = ["yb-tokio-postgres/with-uuid-0_8"]
+with-uuid-1 = ["yb-tokio-postgres/with-uuid-1"]
+with-time-0_2 = ["yb-tokio-postgres/with-time-0_2"]
+with-time-0_3 = ["yb-tokio-postgres/with-time-0_3"]
 
 [dependencies]
 bytes = "1.11"
@@ -47,7 +50,7 @@ futures-util = { version = "0.3.14", default-features = false, features = [
   "sink",
 ] }
 log = "0.4"
-tokio-postgres = { version = "0.7.18", path = "../tokio-postgres" }
+yb-tokio-postgres = { version = "0.7.18-yb-1", path = "../tokio-postgres" }
 tokio = { version = "1.0", features = ["rt", "time"] }
 
 [dev-dependencies]
