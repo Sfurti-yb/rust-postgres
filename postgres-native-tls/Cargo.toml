@@ -1,13 +1,18 @@
 [package]
-name = "postgres-native-tls"
-version = "0.5.3"
+name = "yb-postgres-native-tls"
+version = "0.5.3-yb-1"
 authors = ["Steven Fackler <sfackler@gmail.com>"]
 edition = "2024"
 license = "MIT OR Apache-2.0"
-description = "TLS support for tokio-postgres via native-tls"
-repository = "https://github.com/rust-postgres/rust-postgres"
+homepage = "https://www.yugabyte.com/"
+documentation = "https://docs.yugabyte.com/stable/drivers-orms/rust/yb-rust-postgres"
+description = "TLS support for yb-tokio-postgres via native-tls"
+repository = "https://github.com/yugabyte/rust-postgres"
 readme = "../README.md"
 rust-version = "1.85"
+
+[badges]
+circle-ci = { repository = "yugabyte/rust-postgres" }
 
 [features]
 default = ["runtime"]
