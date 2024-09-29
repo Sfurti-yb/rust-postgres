@@ -1,5 +1,6 @@
 [package]
 name = "yb-tokio-postgres"
+
 version = "0.7.18-yb-1"
 authors = ["Steven Fackler <sfackler@gmail.com>"]
 edition = "2024"
