@@ -87,7 +87,8 @@ use yb_tokio_postgres::{Error, Socket};
 ///     `disable`, hosts and addresses will be tried in the order provided. If set to `random`, hosts will be tried
 ///     in a random order, and the IP addresses resolved from a hostname will also be tried in a random order. Defaults
 ///     to `disable`.
-/// * `load_balance` -  It expects true/false as its possible values. Default value is true.
+/// * `load_balance` -  Defaults to upstream driver behavior unless set to one of the allowed values (true or any, only-rr, only-primary,
+///     prefer-primary, prefer-rr and false) other than 'false'.
 /// * `topology_keys` - It takes a comma separated geo-location values. A single geo-location can be given as 'cloud.region.zone'.
 ///     Multiple geo-locations too can be specified, separated by comma (,). Each placement value can be suffixed with a colon (:)
 ///     followed by a preference value between 1 and 10. A preference value of :1 means it is a primary placement. A preference
@@ -452,7 +453,7 @@ impl Config {
     /// Sets the load balance parameter.
     ///
     /// Defaults to false.
-    pub fn load_balance(&mut self, load_balance: bool) -> &mut Config {
+    pub fn load_balance(&mut self, load_balance: &str) -> &mut Config {
         self.config.load_balance(load_balance);
         self
     }
@@ -460,7 +461,7 @@ impl Config {
     /// YugabyteDB Specific.
     ///
     /// Gets the load balance value
-    pub fn get_load_balance(&self) -> bool {
+    pub fn get_load_balance(&self) -> String {
         self.config.get_load_balance()
     }
 
