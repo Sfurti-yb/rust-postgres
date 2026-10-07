@@ -860,6 +860,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "lazy_static"
+version = "1.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "20870f649af7073d53e38067b2a84312175d56ea15217e1b15bc83506ec50afb"
+
+[[package]]
 name = "leb128fmt"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1182,19 +1188,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "postgres"
-version = "0.19.13"
-dependencies = [
- "bytes",
- "criterion",
- "fallible-iterator",
- "futures-util",
- "log",
- "tokio",
- "tokio-postgres",
-]
-
-[[package]]
 name = "postgres-derive"
 version = "0.4.9"
 dependencies = [
@@ -1208,33 +1201,9 @@ dependencies = [
 name = "postgres-derive-test"
 version = "0.1.0"
 dependencies = [
- "postgres",
  "postgres-types",
  "trybuild",
-]
-
-[[package]]
-name = "postgres-native-tls"
-version = "0.5.3"
-dependencies = [
- "futures-util",
- "native-tls",
- "postgres",
- "tokio",
- "tokio-native-tls",
- "tokio-postgres",
-]
-
-[[package]]
-name = "postgres-openssl"
-version = "0.5.3"
-dependencies = [
- "futures-util",
- "openssl",
- "postgres",
- "tokio",
- "tokio-openssl",
- "tokio-postgres",
+ "yb-postgres",
 ]
 
 [[package]]
@@ -1889,49 +1858,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tokio-postgres"
-version = "0.7.18"
-dependencies = [
- "async-trait",
- "bit-vec 0.6.3",
- "bit-vec 0.7.0",
- "bit-vec 0.8.0",
- "bit-vec 0.9.1",
- "byteorder",
- "bytes",
- "chrono",
- "criterion",
- "env_logger",
- "eui48 1.1.0",
- "fallible-iterator",
- "futures-channel",
- "futures-executor",
- "futures-util",
- "geo-types 0.6.2",
- "geo-types 0.7.19",
- "jiff 0.1.29",
- "jiff 0.2.28",
- "log",
- "parking_lot",
- "percent-encoding",
- "phf",
- "pin-project-lite",
- "postgres-protocol",
- "postgres-types",
- "rand",
- "serde_json",
- "smol_str",
- "socket2",
- "time 0.2.27",
- "time 0.3.45",
- "tokio",
- "tokio-util",
- "uuid 0.8.2",
- "uuid 1.23.2",
- "whoami",
-]
-
-[[package]]
 name = "tokio-util"
 version = "0.7.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2495,6 +2421,87 @@ dependencies = [
  "serde_json",
  "unicode-xid",
  "wasmparser",
+]
+
+[[package]]
+name = "yb-postgres"
+version = "0.19.13-yb-1"
+dependencies = [
+ "bytes",
+ "criterion",
+ "fallible-iterator",
+ "futures-util",
+ "log",
+ "tokio",
+ "yb-tokio-postgres",
+]
+
+[[package]]
+name = "yb-postgres-native-tls"
+version = "0.5.3-yb-1"
+dependencies = [
+ "futures-util",
+ "native-tls",
+ "tokio",
+ "tokio-native-tls",
+ "yb-postgres",
+ "yb-tokio-postgres",
+]
+
+[[package]]
+name = "yb-postgres-openssl"
+version = "0.5.3-yb-1"
+dependencies = [
+ "futures-util",
+ "openssl",
+ "tokio",
+ "tokio-openssl",
+ "yb-postgres",
+ "yb-tokio-postgres",
+]
+
+[[package]]
+name = "yb-tokio-postgres"
+version = "0.7.18-yb-1"
+dependencies = [
+ "async-trait",
+ "bit-vec 0.6.3",
+ "bit-vec 0.7.0",
+ "bit-vec 0.8.0",
+ "bit-vec 0.9.1",
+ "byteorder",
+ "bytes",
+ "chrono",
+ "criterion",
+ "env_logger",
+ "eui48 1.1.0",
+ "fallible-iterator",
+ "futures-channel",
+ "futures-executor",
+ "futures-util",
+ "geo-types 0.6.2",
+ "geo-types 0.7.19",
+ "jiff 0.1.29",
+ "jiff 0.2.28",
+ "lazy_static",
+ "log",
+ "parking_lot",
+ "percent-encoding",
+ "phf",
+ "pin-project-lite",
+ "postgres-protocol",
+ "postgres-types",
+ "rand",
+ "serde_json",
+ "smol_str",
+ "socket2",
+ "time 0.2.27",
+ "time 0.3.45",
+ "tokio",
+ "tokio-util",
+ "uuid 0.8.2",
+ "uuid 1.23.2",
+ "whoami",
 ]
 
 [[package]]
