@@ -2,12 +2,12 @@
 name = "postgres-protocol"
 version = "0.6.12"
 authors = ["Steven Fackler <sfackler@gmail.com>"]
-edition = "2024"
+edition = "2021"
 description = "Low level Postgres protocol APIs"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/rust-postgres/rust-postgres"
 readme = "../README.md"
-rust-version = "1.85"
+rust-version = "1.70.0"
 
 [features]
 default = []

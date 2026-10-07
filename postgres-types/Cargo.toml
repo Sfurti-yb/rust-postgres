@@ -2,14 +2,14 @@
 name = "postgres-types"
 version = "0.2.14"
 authors = ["Steven Fackler <sfackler@gmail.com>"]
-edition = "2024"
+edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "Conversions between Rust and Postgres values"
 repository = "https://github.com/rust-postgres/rust-postgres"
 readme = "../README.md"
 keywords = ["database", "postgres", "postgresql", "sql"]
 categories = ["database"]
-rust-version = "1.85"
+rust-version = "1.70.0"
 
 [features]
 derive = ["postgres-derive"]

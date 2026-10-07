@@ -6,7 +6,7 @@ name = "yb-tokio-postgres"
 
 version = "0.7.18-yb-1"
 authors = ["Steven Fackler <sfackler@gmail.com>"]
-edition = "2024"
+edition = "2021"
 license = "MIT OR Apache-2.0"
 homepage = "https://www.yugabyte.com/"
 documentation = "https://docs.yugabyte.com/stable/drivers-orms/rust/yb-rust-postgres"
@@ -15,7 +15,7 @@ repository = "https://github.com/yugabyte/rust-postgres"
 readme = "../README.md"
 keywords = ["database", "postgresql", "sql", "async", "yugabytedb"]
 categories = ["database"]
-rust-version = "1.85"
+rust-version = "1.70.0"
 
 [lib]
 test = false
